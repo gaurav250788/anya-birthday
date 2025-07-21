@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anya's 5th Birthday Party!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #d23369;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffcce6;
+            background-image: url('happy-Birthday-themed-party-supplies.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(210, 51, 105, 0.4);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 3px solid #ff6b9d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: #d23369;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        
+        .birthday-girl {
+            font-size: 1.8em;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+        }
+        
+        .date-time {
+            font-size: 1.4em;
+            margin: 20px 0;
+            color: #8a2be2;
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .venue {
+            font-size: 1.3em;
+            margin: 20px 0;
+            font-weight: bold;
+            background-color: #fffacd;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .activities {
+            background-color: #e6ffe6;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .activities h2 {
+            color: #2e8b57;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .activities ul {
+            padding-left: 20px;
+        }
+        
+        .activities li {
+            margin-bottom: 10px;
+        }
+        
+        .rsvp-form {
+            background-color: #fff0f5;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffb6c1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #d23369;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: #ff6b9d;
+            transform: scale(1.02);
+        }
+        
+        .map-container {
+            margin: 30px 0;
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .map-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .map-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .map-btn.apple {
+            background-color: #000;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .reminder {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .rsvp-list {
+            background-color: #f5f5ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .rsvp-list h2 {
+            color: #4a4a8a;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .rsvp-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .rsvp-count {
+            font-weight: bold;
+            color: #d23369;
+        }
+        
+        .total-guests {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #2e8b57;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 You're Invited! 🎉</h1>
+        <div class="birthday-girl">To Celebrate Anya's 5th Birthday!</div>
+        
+        <div class="date-time">
+            📅 Saturday, August 2nd, 2025<br>
+            ⏰ 1:00 PM - 4:00 PM
+        </div>
+        
+        <div class="venue">
+            🎈 YMCA Peterborough 🎈<br>
+            123 Aylmer Street South, Peterborough, ON, K9J 3H8
+        </div>
+        
+        <div class="activities">
+            <h2>🎂 Party Activities 🎂</h2>
+            <ul>
+                <li>Birthday cake cutting ceremony</li>
+                <li>Swimming in the YMCA pool</li>
+                <li>Fun in the tree house</li>
+                <li>Lots of laughter and fun!</li>
+            </ul>
+        </div>
+        
+        <div class="reminder">
+            🏊‍♀️ Please bring swimming costumes for children and any adults who will be joining them in the pool
+        </div>
+        
+        <div class="rsvp-form">
+            <h2>📋 RSVP by July 27th</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Number of People Attending:</label>
+                    <select id="guests" name="guests" required>
+                        <option value="" disabled selected>Select number</option>
+                        <option value="1">1 (Just me)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6+</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
+        
+        <div class="rsvp-list" id="rsvpList">
+            <h2>🎈 Who's Coming 🎈</h2>
+            <div id="rsvpItems"></div>
+            <div class="total-guests" id="totalGuests">Total Guests: 0</div>
+        </div>
+        
+        <div class="map-container">
+            <h2>📍 How to Get There</h2>
+            <p>YMCA Peterborough<br>123 Aylmer Street South, Peterborough, ON, K9J 3H8</p>
+            <div>
+                <a href="https://www.google.com/maps/place/YMCA+Peterborough/@44.300543,-78.321583,17z/data=!3m1!4b1!4m6!3m5!1s0x89d59f8a8a0f0a8d:0x8f8e9d9e9d9e9d9e!8m2!3d44.300543!4d-78.321583!16s%2Fg%2F1tgq6z1h" class="map-btn" target="_blank">Directions via Google Maps</a>
+                <a href="https://maps.apple.com/?address=123%20Aylmer%20St%20S,%20Peterborough,%20ON%20K9J%203H8,%20Canada&auid=0&ll=44.300543,-78.321583&lsp=7618&q=YMCA%20Peterborough" class="map-btn apple" target="_blank">Directions via Apple Maps</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            We can't wait to celebrate with you!<br>
+            For any questions, please contact (705) 761-7855
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script>
+  // Your Firebase config (replace with your actual config)
+  const firebaseConfig = {
+   apiKey: "AIzaSyCfTtzkV9zwsBPRFV8wzIOL3jOhSoHNCy4",
+  authDomain: "anyabirthday-d18ee.firebaseapp.com",
+  projectId: "anyabirthday-d18ee",
+  storageBucket: "anyabirthday-d18ee.firebasestorage.app",
+  messagingSenderId: "842939764502",
+  appId: "1:842939764502:web:862ed01e2b05c47ac44a37"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // Store and load RSVPs from Firebase
+  function loadRSVPs() {
+    db.collection("rsvps").orderBy("timestamp", "desc").get()
+      .then((querySnapshot) => {
+        const rsvpItemsContainer = document.getElementById('rsvpItems');
+        rsvpItemsContainer.innerHTML = '';
+        let totalGuests = 0;
+        
+        querySnapshot.forEach((doc) => {
+          const rsvp = doc.data();
+          totalGuests += parseInt(rsvp.guests);
+          
+          const rsvpItem = document.createElement('div');
+          rsvpItem.className = 'rsvp-item';
+          rsvpItem.innerHTML = `
+            <span>${rsvp.name}</span>
+            <span class="rsvp-count">${rsvp.guests} ${rsvp.guests == 1 ? 'person' : 'people'}</span>
+          `;
+          rsvpItemsContainer.appendChild(rsvpItem);
+        });
+        
+        document.getElementById('totalGuests').textContent = `Total Guests: ${totalGuests}`;
+      });
+  }
+
+  // Form handling
+  document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const guests = document.getElementById('guests').value;
+    
+    if (name && guests) {
+      // Add new RSVP to Firebase
+      db.collection("rsvps").add({
+        name: name,
+        guests: guests,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then(() => {
+        alert(`Thank you, ${name}! Your RSVP for ${guests} ${guests == 1 ? 'person' : 'people'} has been recorded.`);
+        document.getElementById('rsvpForm').reset();
+        loadRSVPs();
+        
+        // Add extra confetti for celebration
+        for (let i = 0; i < 20; i++) {
+          setTimeout(createConfetti, i * 100);
+        }
+      })
+      .catch((error) => {
+        alert("Error saving RSVP: " + error.message);
+      });
+    }
+  });
+
+  // Load RSVPs when page loads
+  window.addEventListener('DOMContentLoaded', () => {
+    loadRSVPs();
+    
+    // Add some initial confetti
+    for (let i = 0; i < 50; i++) {
+      setTimeout(createConfetti, i * 100);
+    }
+    
+    // Add confetti periodically
+    setInterval(createConfetti, 300);
+  });
+
+  // Create confetti effect (keep your existing function)
+  function createConfetti() {
+    const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    document.body.appendChild(confetti);
+    
+    setTimeout(() => {
+      confetti.remove();
+    }, 5000);
+  }
+</script>
+</body>
+</html>
